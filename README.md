@@ -26,4 +26,4 @@ sao haolchen/template-vuepress my-project
 
 ## License
 
-MIT &copy; [haolchen](github.com/haolchen)
+MIT &copy; [ULIVZ](https://github.com/ulivz)
