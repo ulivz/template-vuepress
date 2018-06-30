@@ -1,3 +1,13 @@
+<a name="0.1.2"></a>
+## [0.1.2](https://github.com/ulivz/template-vuepress/compare/v0.1.1...v0.1.2) (2018-06-30)
+
+
+### Bug Fixes
+
+* cannot get correct default project name when create new project ([eacb3cd](https://github.com/ulivz/template-vuepress/commit/eacb3cd))
+
+
+
 <a name="0.1.1"></a>
 ## [0.1.1](https://github.com/ulivz/template-vuepress/compare/0.1.0...0.1.1) (2018-06-30)
 
