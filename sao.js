@@ -44,11 +44,20 @@ module.exports = {
       default({ name }) {
         return `/${name}/`
       },
-    }
+    },
+    pm: {
+      message: 'Choose a package manager',
+      choices: ['npm', 'yarn'],
+      type: 'list',
+      default: 'yarn'
+    },
   },
-  data() {
+  data({ pm }) {
     return {
-      isNewProject: !pkg
+      isNewProject: !pkg,
+      installScript: pm === 'npm'
+        ? 'npm install vuepress -D'
+        : 'yarn add vuepress -D'
     }
   },
   filters: {
@@ -59,7 +68,8 @@ module.exports = {
     'gitignore': '.gitignore'
   },
   showTip: true,
-  post() {
+  post(ctx, stream) {
+    const { pm, installScript } = stream.meta.merged
     if (pkg) {
       if (!pkg.scripts) {
         pkg.scripts = {}
@@ -75,12 +85,13 @@ module.exports = {
         'utf-8'
       )
       tip(`${chalk.cyan('npm scripts')} injected successfully.`)
-      console.log(`    Please install vuepres：${chalk.blueBright('yarn add vuepress -D')}`)
+      console.log(`    Please install vuepres：${stylingCommand(installScript)}`)
     }
+
     console.log(`
-    Develop your docs: ${chalk.blueBright('yarn docs:dev')}\n
-    Build dir as static site: ${chalk.blueBright('yarn docs:build')}\n
-    Release you docs: ${chalk.blueBright('yarn docs:release')}\n`)
+    Develop your docs: ${stylingCommand(localizeScript(pm, 'docs:dev'))}\n
+    Build dir as static site: ${stylingCommand(localizeScript(pm, 'docs:build'))}\n
+    Release you docs: ${stylingCommand(localizeScript(pm, 'docs:release'))}\n`)
   }
 }
 
@@ -93,4 +104,15 @@ function resolvePkg () {
 
 function tip (msg) {
   console.log(`\n${chalk.bgGreen(chalk.black(' TIP '))} ${msg}\n`)
+}
+
+function localizeScript (pm, command) {
+  if (pm === 'npm') {
+    return `npm run ${command}`
+  }
+  return `yarn ${command}`
+}
+
+function stylingCommand (cmd) {
+  return chalk.blueBright(cmd)
 }
