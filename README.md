@@ -4,8 +4,8 @@
 
 ## Features
 
-- [Sidebar](https://vuepress.vuejs.org/default-theme-config/#sidebar) config generation out of box
 - Support for use in new or old projects
+- [Sidebar](https://vuepress.vuejs.org/default-theme-config/#sidebar) config generation out of box
 - NPM scripts injection
 - [Github Pages](https://vuepress.vuejs.org/guide/deploy.html#github-pages) release integration
 
