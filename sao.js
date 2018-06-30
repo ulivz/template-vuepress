@@ -20,17 +20,17 @@ module.exports = {
       default: ':gitUser:',
       store: true
     },
-    name: {
-      message: 'Project\'s name?',
-      default: isNewProject
-        ? ':folderName:'
-        : name
-    },
     email: {
       message: 'What is your GitHub email',
       default: ':gitEmail:',
       store: true,
       validate: v => /.+@.+/.test(v)
+    },
+    name: {
+      message: 'Project\'s name?',
+      default: isNewProject
+        ? ':folderName:'
+        : name
     },
     description: {
       message: 'Project\'s description?',
