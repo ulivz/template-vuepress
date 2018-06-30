@@ -20,7 +20,7 @@ module.exports = {
   },
   serviceWorker: true,
   themeConfig: {
-    repo: "<%= website %>",
+    repo: "<%= username %>/<%= name %>",
     editLinks: true,
     docsDir: 'docs',
     editLinkText: 'Edit this page on GitHub',

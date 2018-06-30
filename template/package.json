@@ -1,0 +1,16 @@
+{
+  "name": "<%= name %>",
+  "description": "<%= description %>",
+  "version": "1.0.0",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "docs:release": "/bin/bash docs-deploy.sh"
+  },
+  "repository": "https://github.com/<%= username %>/<%= name %>.git",
+  "author": "<%= username %> <<%= email %>>",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^0.10.2"
+  }
+}
