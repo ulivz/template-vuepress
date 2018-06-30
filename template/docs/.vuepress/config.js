@@ -8,7 +8,6 @@ const sidebars = [
 
 module.exports = {
   base: "<%= base %>",
-  dest: "<%= dest %>",
   title: "<%= title %>",
   description: "<%= description %>",
   head: [

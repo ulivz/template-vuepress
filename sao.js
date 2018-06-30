@@ -1,15 +1,27 @@
 const superb = require('superb')
 const path = require('path')
+const fs = require('fs')
+
+const pkg = resolvePkg()
+const { name, description } = pkg.name
 
 module.exports = {
   prompts: {
     name: {
-      message: 'What is the name of the new project?',
-      default: ':folderName:'
+      message: 'Project\'s name?',
+      default({ folderName }) {
+        return name || folderName
+      },
     },
     description: {
-      message: 'How would you descripe the new project?',
-      default: `my ${superb()} project`
+      message: 'Project\'s description?',
+      default: description
+    },
+    base: {
+      message: 'Project\'s base url?',
+      default({ folderName }) {
+        return `/${name || folderName}/`
+      },
     },
     username: {
       message: 'What is your GitHub username?',
@@ -23,7 +35,7 @@ module.exports = {
     },
     website: {
       message: 'The URL of your website?',
-      default({username}) {
+      default({ username }) {
         return `github.com/${username}`
       },
       store: true
@@ -32,7 +44,13 @@ module.exports = {
   move: {
     'gitignore': '.gitignore'
   },
-  showTip: true,
-  gitInit: true,
-  installDependencies: true
+  showTip: true
+}
+
+function resolvePkg () {
+  const target = path.resolve(process.cwd(), 'package.json')
+  if (fs.existsSync(target)) {
+    return require(target)
+  }
+  return {}
 }
