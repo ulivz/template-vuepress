@@ -4,6 +4,7 @@ const fs = require('fs')
 const defaultPkg = require('./template/package.json')
 
 const pkg = resolvePkg()
+const isNewProject = !pkg
 const { name, description } = pkg || {}
 
 if (pkg) {
@@ -21,7 +22,9 @@ module.exports = {
     },
     name: {
       message: 'Project\'s name?',
-      default: name
+      default: isNewProject
+        ? ':folderName:'
+        : name
     },
     email: {
       message: 'What is your GitHub email',
