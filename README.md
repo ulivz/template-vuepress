@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="./.media/using_in_a_exisiting_project.png" alt="preview">
+  <img src="https://raw.githubusercontent.com/ulivz/template-vuepress/master/.media/using_in_a_exisiting_project.png" alt="preview">
 </p>
 
 ## Features

@@ -94,7 +94,7 @@ module.exports = {
         'utf-8'
       )
       tip(`${chalk.cyan('npm scripts')} injected successfully.`)
-      console.log(`    Please install vuepres：${stylingCommand(installScript)}`)
+      console.log(`    Install vuepress：${stylingCommand(installScript)}`)
     }
 
     console.log(`
