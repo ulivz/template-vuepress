@@ -1,3 +1,8 @@
+<a name="0.1.3"></a>
+## [0.1.3](https://github.com/ulivz/template-vuepress/compare/v0.1.2...v0.1.3) (2018-06-30)
+
+
+
 <a name="0.1.2"></a>
 ## [0.1.2](https://github.com/ulivz/template-vuepress/compare/v0.1.1...v0.1.2) (2018-06-30)
 
