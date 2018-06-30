@@ -15,7 +15,7 @@
 ## Features
 
 - Support for use in new or exisitng projects
-- [Sidebar](https://vuepress.vuejs.org/default-theme-config/#sidebar) config generation out of box
+- Global [Sidebar](https://vuepress.vuejs.org/default-theme-config/#sidebar) config generation out of box
 - NPM scripts injection for exisitng projects
 - Friendly user guide
 - [Github Pages](https://vuepress.vuejs.org/guide/deploy.html#github-pages) release integration
@@ -24,7 +24,7 @@
 
 Install [SAO](https://github.com/egoist/sao) first.
 
-```bash
+``` bash
 yarn global add sao
 # or
 npm i -g sao
@@ -32,13 +32,17 @@ npm i -g sao
 
 ### From npm
 
-```bash
-sao vuepress my-project
+``` bash
+sao vuepress # using in a exisiting projects
+# or
+sao vuepress my-project 
 ```
 
 ### From git
 
-```bash
+``` bash
+sao ulivz/template-vuepress # using in a exisiting projects
+# or
 sao ulivz/template-vuepress my-project
 ```
 
