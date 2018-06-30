@@ -21,7 +21,7 @@ sao vuepress my-project
 ### From git
 
 ```bash
-sao haolchen/template-vuepress my-project
+sao ulivz/template-vuepress my-project
 ```
 
 ## License
