@@ -14,9 +14,9 @@
 
 ## Features
 
-- Support for use in new or old projects
+- Support for use in new or exisitng projects
 - [Sidebar](https://vuepress.vuejs.org/default-theme-config/#sidebar) config generation out of box
-- NPM scripts injection
+- NPM scripts injection for exisitng projects
 - Friendly user guide
 - [Github Pages](https://vuepress.vuejs.org/guide/deploy.html#github-pages) release integration
 
