@@ -5,7 +5,7 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "docs:release": "/bin/bash docs-deploy.sh"
+    "docs:release": "/bin/bash docs/deploy.sh"
   },
   "repository": "https://github.com/<%= username %>/<%= name %>.git",
   "author": "<%= username %> <<%= email %>>",
