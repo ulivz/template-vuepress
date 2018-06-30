@@ -1,11 +1,6 @@
 const fs = require('fs')
 const path = require('path')
 
-const sidebars = [
-  { title: 'JavaScript', dirname: 'javascript' },
-  { title: 'CSS', dirname: 'css' },
-]
-
 module.exports = {
   base: "<%= base %>",
   title: "<%= title %>",
@@ -30,6 +25,10 @@ module.exports = {
 }
 
 function autoGetSiderbars () {
+  const sidebars = [
+    { title: 'JavaScript', dirname: 'javascript' },
+    { title: 'CSS', dirname: 'css' },
+  ]
   return sidebars.map(({ title, dirname }) => {
     const dirpath = path.resolve(__dirname, '../' + dirname)
     return {
@@ -38,7 +37,7 @@ function autoGetSiderbars () {
       children: fs
         .readdirSync(dirpath)
         .filter(item => item.endsWith('.md') && fs.statSync(path.join(dirpath, item)).isFile())
-        .map(item => dirname + '/' + item.replace(/.md$/, ''))
+        .map(item => dirname + '/' + item.replace(/(README)?(.md)$/, ''))
     }
   })
 }
