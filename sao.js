@@ -29,7 +29,9 @@ module.exports = {
     },
     email: {
       message: 'What is your GitHub email',
-      default: ':gitEmail:',
+      default: process.env.NODE_ENV === 'test'
+        ? 'a@b.com'
+        : ':gitEmail:',
       store: true,
       validate: v => /.+@.+/.test(v)
     },
