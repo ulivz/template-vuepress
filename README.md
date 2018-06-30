@@ -9,10 +9,8 @@
 </p>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/8784712/28497936-b0c65a1a-6fc5-11e7-8d9d-75d2c297b6d5.png" alt="preview">
+  <img src="./.media/using_in_a_exisiting_project.png" alt="preview">
 </p>
-
-# 
 
 > Create a VuePres project with [SAO](https://github.com/egoist/sao).
 

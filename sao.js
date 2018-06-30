@@ -15,6 +15,13 @@ if (pkg) {
 
 module.exports = {
   prompts: {
+    // This prompt can be replaced by sao's data option,
+    // but this will cause the test failed coz it cannot get
+    // the correct mock prompt value.
+    isNewProject: {
+      default: !pkg,
+      when: false
+    },
     username: {
       message: 'What is your GitHub username?',
       default: ':gitUser:',
@@ -57,7 +64,6 @@ module.exports = {
   },
   data({ pm }) {
     return {
-      isNewProject: !pkg,
       installScript: pm === 'npm'
         ? 'npm install vuepress -D'
         : 'yarn add vuepress -D'
@@ -99,6 +105,9 @@ module.exports = {
 }
 
 function resolvePkg () {
+  if (process.env.NODE_ENV === 'test') {
+    return
+  }
   const target = path.resolve(process.cwd(), 'package.json')
   if (fs.existsSync(target)) {
     return require(target)
