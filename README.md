@@ -1,6 +1,22 @@
-# template-vuepress
+<h1 align="center">template-vuepress</h1>
+
+<p align="center">
+  Scaffold out a VuePress project.
+</p>
+
+<p align="center">
+<a href="https://npmjs.com/package/template-vuepress"><img src="https://img.shields.io/npm/v/template-vuepress.svg?style=flat" alt="NPM version"></a> <a href="https://npmjs.com/package/template-vuepress"><img src="https://img.shields.io/npm/dm/template-vuepress.svg?style=flat" alt="NPM downloads"></a> <a href="https://circleci.com/gh/ulivz/template-vuepress"><img src="https://img.shields.io/circleci/project/ulivz/template-vuepress/master.svg?style=flat" alt="Build Status"></a> <a href="https://github.com/ulivz/donate"><img src="https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&amp;style=flat" alt="donate"></a>
+</p>
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/8784712/28497936-b0c65a1a-6fc5-11e7-8d9d-75d2c297b6d5.png" alt="preview">
+</p>
+
+# 
 
 > Create a VuePres project with [SAO](https://github.com/egoist/sao).
+
+## 
 
 ## Features
 
