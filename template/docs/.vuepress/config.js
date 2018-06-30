@@ -1,4 +1,10 @@
+const fs = require('fs')
 const path = require('path')
+
+const sidebars = [
+  { title: 'JavaScript', dirname: 'javascript' },
+  { title: 'CSS', dirname: 'css' },
+]
 
 module.exports = {
   base: "<%= base %>",
@@ -20,16 +26,20 @@ module.exports = {
     docsDir: 'docs',
     editLinkText: 'Edit this page on GitHub',
     lastUpdated: 'Last Updated',
-    sidebar: sidebars.map(({ title, dirname }) => {
-      const dirpath = path.resolve(__dirname, '../' + dirname)
-      return {
-        title,
-        collapsable: false,
-        children: fs
-          .readdirSync(dirpath)
-          .filter(item => item.endsWith('.md') && fs.statSync(path.join(dirpath, item)).isFile())
-          .map(item => dirname + '/' + item.replace(/.md$/, ''))
-      }
-    })
+    sidebar: autoGetSiderbars()
   }
+}
+
+function autoGetSiderbars () {
+  return sidebars.map(({ title, dirname }) => {
+    const dirpath = path.resolve(__dirname, '../' + dirname)
+    return {
+      title,
+      collapsable: false,
+      children: fs
+        .readdirSync(dirpath)
+        .filter(item => item.endsWith('.md') && fs.statSync(path.join(dirpath, item)).isFile())
+        .map(item => dirname + '/' + item.replace(/.md$/, ''))
+    }
+  })
 }
