@@ -37,7 +37,7 @@ module.exports = {
       default: description
     },
     title: {
-      message: 'Docs\'s title?',
+      message: 'Project\'s title?',
       default({ name }) {
         return name
       },
