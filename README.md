@@ -12,10 +12,6 @@
   <img src="./.media/using_in_a_exisiting_project.png" alt="preview">
 </p>
 
-> Create a VuePres project with [SAO](https://github.com/egoist/sao).
-
-## 
-
 ## Features
 
 - Support for use in new or old projects
