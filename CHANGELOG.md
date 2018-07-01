@@ -1,3 +1,13 @@
+<a name="0.1.5"></a>
+## [0.1.5](https://github.com/ulivz/template-vuepress/compare/v0.1.4...v0.1.5) (2018-07-01)
+
+
+### Bug Fixes
+
+* wrong build script in release script ([65cb161](https://github.com/ulivz/template-vuepress/commit/65cb161))
+
+
+
 <a name="0.1.4"></a>
 ## [0.1.4](https://github.com/ulivz/template-vuepress/compare/v0.1.3...v0.1.4) (2018-06-30)
 
