@@ -1,3 +1,13 @@
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/ulivz/template-vuepress/compare/v0.1.5...v0.2.0) (2018-07-04)
+
+
+### Features
+
+* hoist readme when generating sidebars ([8dc29fd](https://github.com/ulivz/template-vuepress/commit/8dc29fd))
+
+
+
 <a name="0.1.5"></a>
 ## [0.1.5](https://github.com/ulivz/template-vuepress/compare/v0.1.4...v0.1.5) (2018-07-01)
 
