@@ -60,6 +60,7 @@ function inferSiderbars () {
       children: fs
         .readdirSync(dirpath)
         .filter(item => item.endsWith('.md') && fs.statSync(path.join(dirpath, item)).isFile())
+        .sort((prev, next) => prev.indexOf('README.md') !== -1 ? -1 : next.indexOf('README.md') === -1 ? 1 : 0)
         .map(item => dirname + '/' + item.replace(/(README)?(.md)$/, ''))
     }
   })
