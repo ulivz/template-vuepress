@@ -15,13 +15,14 @@ if (pkg) {
 
 module.exports = {
   prompts: {
-    // This prompt can be replaced by sao's data option,
-    // but this will cause the test failed coz it cannot get
-    // the correct mock prompt value.
+    // This prompt was used for testing. the test will be
+    // failed coz 'mockPrompt' cannot get the correct mock
+    // prompt value.
     isNewProject: {
-      default: !pkg,
+      default: isNewProject,
       when: false
     },
+
     username: {
       message: 'What is your GitHub username?',
       default: ':gitUser:',
@@ -47,13 +48,13 @@ module.exports = {
     },
     title: {
       message: 'Project\'s title?',
-      default({ name }) {
+      default ({ name }) {
         return name
       },
     },
     base: {
       message: 'Project\'s base url?',
-      default({ name }) {
+      default ({ name }) {
         return `/${name}/`
       },
     },
@@ -64,12 +65,19 @@ module.exports = {
       default: 'yarn'
     },
   },
-  data({ pm }) {
-    return {
+  data ({ pm }) {
+    const data = {
       installScript: pm === 'npm'
         ? 'npm install vuepress -D'
         : 'yarn add vuepress -D'
     }
+    if (process.env.NODE_ENV !== 'test') {
+      // #2 A prompt option with 'when: false'
+      // will not be added to the generating context.
+      // but will be respected under mockPrompt.
+      data.isNewProject = isNewProject
+    }
+    return data
   },
   filters: {
     'package.json': "isNewProject",
@@ -79,8 +87,10 @@ module.exports = {
     'gitignore': '.gitignore'
   },
   showTip: true,
-  post(ctx, stream) {
+  post (ctx, stream) {
     const { pm, installScript } = stream.meta.merged
+
+    // inject npm scripts
     if (pkg) {
       if (!pkg.scripts) {
         pkg.scripts = {}
