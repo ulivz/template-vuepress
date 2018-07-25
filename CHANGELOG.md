@@ -1,3 +1,13 @@
+<a name="0.2.1"></a>
+## [0.2.1](https://github.com/ulivz/template-vuepress/compare/v0.2.0...v0.2.1) (2018-07-25)
+
+
+### Bug Fixes
+
+* package.json and gitignore weren't generated when create a new project. (close: [#2](https://github.com/ulivz/template-vuepress/issues/2)) ([d9f071e](https://github.com/ulivz/template-vuepress/commit/d9f071e))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/ulivz/template-vuepress/compare/v0.1.5...v0.2.0) (2018-07-04)
 
