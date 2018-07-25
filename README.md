@@ -30,10 +30,14 @@ yarn global add sao
 npm i -g sao
 ```
 
+> It's recommended to execute following instructions at your project dir instead of project's father directory. since we will determine whether it's a new or exisitng project by checking files in current working directory. 
+
 ### From npm
 
 ``` bash
 sao vuepress # using in a exisiting projects
+sao -u vuepress # fetch the latest version before the start.
+
 # or
 sao vuepress my-project 
 ```
