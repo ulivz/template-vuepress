@@ -1,3 +1,13 @@
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/ulivz/template-vuepress/compare/v0.3.0...v0.4.0) (2018-07-29)
+
+
+### Features
+
+* SW-update popup ([5af7f97](https://github.com/ulivz/template-vuepress/commit/5af7f97))
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/ulivz/template-vuepress/compare/v0.2.1...v0.3.0) (2018-07-25)
 
