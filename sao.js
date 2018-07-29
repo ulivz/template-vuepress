@@ -28,6 +28,7 @@ module.exports = {
       default: ':gitUser:',
       store: true
     },
+
     email: {
       message: 'What is your GitHub email',
       default: process.env.NODE_ENV === 'test'
@@ -36,28 +37,33 @@ module.exports = {
       store: true,
       validate: v => /.+@.+/.test(v)
     },
+
     name: {
       message: 'Project\'s name?',
       default: isNewProject
         ? ':folderName:'
         : name
     },
+
     description: {
       message: 'Project\'s description?',
       default: description
     },
+
     title: {
       message: 'Project\'s title?',
       default ({ name }) {
         return name
       },
     },
+
     base: {
       message: 'Project\'s base url?',
       default ({ name }) {
         return `/${name}/`
       },
     },
+
     pm: {
       message: 'Choose a package manager',
       choices: ['npm', 'yarn'],
@@ -65,6 +71,7 @@ module.exports = {
       default: 'yarn'
     },
   },
+
   data ({ pm }) {
     const data = {
       installScript: pm === 'npm'
@@ -79,14 +86,18 @@ module.exports = {
     }
     return data
   },
+
   filters: {
     'package.json': "isNewProject",
     "gitignore": "isNewProject"
   },
+
   move: {
     'gitignore': '.gitignore'
   },
+
   showTip: true,
+
   post (ctx, stream) {
     const { pm, installScript } = stream.meta.merged
 
@@ -106,15 +117,21 @@ module.exports = {
         'utf-8'
       )
       tip(`${chalk.cyan('npm scripts')} injected successfully.`)
-      console.log(`    Install vuepress：${stylingCommand(installScript)}`)
+      console.log(`    Install vuepress：${coloredCommand(installScript)}`)
     }
 
     console.log(`
-    Develop your docs: ${stylingCommand(localizeScript(pm, 'docs:dev'))}\n
-    Build dir as static site: ${stylingCommand(localizeScript(pm, 'docs:build'))}\n
-    Release you docs: ${stylingCommand(localizeScript(pm, 'docs:release'))}\n`)
+      Develop your docs: ${coloredCommand(localizeScript(pm, 'docs:dev'))}\n
+      Build dir as static site: ${coloredCommand(localizeScript(pm, 'docs:build'))}\n
+      Release you docs: ${coloredCommand(localizeScript(pm, 'docs:release'))}\n`
+    )
   }
 }
+
+/**
+ * Resolve package.json
+ * @returns {Object}
+ */
 
 function resolvePkg () {
   if (process.env.NODE_ENV === 'test') {
@@ -126,9 +143,21 @@ function resolvePkg () {
   }
 }
 
+/**
+ * Simple tip logger
+ * @param {string} msg
+ */
+
 function tip (msg) {
   console.log(`\n${chalk.bgGreen(chalk.black(' TIP '))} ${msg}\n`)
 }
+
+/**
+ *
+ * @param {string} pm package manager
+ * @param {string} command
+ * @returns {string}
+ */
 
 function localizeScript (pm, command) {
   if (pm === 'npm') {
@@ -137,6 +166,12 @@ function localizeScript (pm, command) {
   return `yarn ${command}`
 }
 
-function stylingCommand (cmd) {
+/**
+ * Colored command string
+ * @param {string} cmd
+ * @returns {string}
+ */
+
+function coloredCommand (cmd) {
   return chalk.blueBright(cmd)
 }
