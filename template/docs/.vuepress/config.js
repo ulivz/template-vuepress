@@ -33,7 +33,10 @@ module.exports = {
     docsDir: 'docs',
     editLinkText: 'Edit this page on GitHub',
     lastUpdated: 'Last Updated',
-    sidebar: inferSiderbars()
+    sidebar: inferSiderbars(),
+    serviceWorker: {
+      updatePopup: true // See: https://vuepress.vuejs.org/default-theme-config/#popup-ui-to-refresh-contents
+    }
   }
 }
 
