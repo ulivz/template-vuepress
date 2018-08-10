@@ -51,10 +51,7 @@ module.exports = {
  */
 function inferSiderbars () {
   // You will need to update this config when directory was added or removed.
-  const sidebars = [
-    { title: 'JavaScript', dirname: 'javascript' },
-    { title: 'CSS', dirname: 'css' },
-  ]
+  const sidebars = require('./sidebar')
   return sidebars.map(({ title, dirname }) => {
     const dirpath = path.resolve(__dirname, '../' + dirname)
     return {
