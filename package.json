@@ -23,6 +23,6 @@
     "ava": "^0.21.0",
     "release-it": "v7.4.8",
     "conventional-changelog-cli": "^2.0.1",
-    "sao": "^0.22.1"
+    "sherry": "^1.1.1"
   }
 }
