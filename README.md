@@ -22,7 +22,7 @@
 
 ## Usage
 
-Install [Sherry](https://github.com/sherry/sherry) first.
+Install Sherry first.
 
 ``` bash
 yarn global add sherry
