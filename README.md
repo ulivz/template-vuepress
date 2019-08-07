@@ -14,6 +14,8 @@
 
 ## Features
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ulivz/template-vuepress.svg)](https://greenkeeper.io/)
+
 - Support for use in new or exisitng projects
 - Global [Sidebar](https://vuepress.vuejs.org/default-theme-config/#sidebar) config generation out of box
 - NPM scripts injection for exisitng projects
