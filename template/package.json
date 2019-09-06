@@ -11,6 +11,6 @@
   "author": "<%= username %> <<%= email %>>",
   "license": "MIT",
   "devDependencies": {
-    "vuepress": "^1.0.0-alpha.42"
+    "vuepress": "^1.0.4"
   }
 }
