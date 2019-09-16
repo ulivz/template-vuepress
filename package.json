@@ -20,7 +20,7 @@
     "chalk": "^2.4.1"
   },
   "devDependencies": {
-    "ava": "^2.2.0",
+    "ava": "^2.4.0",
     "release-it": "12.3.4",
     "conventional-changelog-cli": "^2.0.1",
     "sherry": "^1.1.1"
