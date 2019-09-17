@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "ava": "^2.2.0",
-    "release-it": "12.3.4",
+    "release-it": "12.4.1",
     "conventional-changelog-cli": "^2.0.1",
     "sherry": "^1.1.1"
   }
